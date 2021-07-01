@@ -1,5 +1,6 @@
 # Custom Object-Detection Using Jetson-Inference
 This github repo focuses on implementing custom object detection on the jetson nano, by using Jetson-inference by HelloAI World, Dusty.
+Huge thanks to Dusty and feel free to use anything available here as you wish.
 
 By using this method it is easier to annotate custom datasets and obtain pre-trained datasets for your projects.
 
