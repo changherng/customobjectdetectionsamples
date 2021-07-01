@@ -12,3 +12,19 @@ These are the list of things that we will cover:
 5) Launching your own object detection program
 6) Writing your own custom object detection program in python
 7) References
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Other projects that you can work on a jetson nano are face detection or recognition using haarcascade for higher fps but sacrificing accuracy.
