@@ -25,6 +25,7 @@ different classes of objects for you to choose from.
 
 
 
+Code for flask server object detection [here](https://github.com/changherng/customobjectdetectionsamples/blob/main/objectDetectorFlaskServer.py)
 
 
 
