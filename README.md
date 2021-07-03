@@ -1,6 +1,5 @@
 # Custom Object-Detection Using Jetson-Inference
 This github repo focuses on implementing custom object detection on the jetson nano, by using Jetson-inference by HelloAI World, Dusty.
-Huge thanks to Dusty and feel free to use anything available here as you wish.
 
 By using this method it is easier to annotate custom datasets and obtain pre-trained datasets for your projects.
 
@@ -19,8 +18,35 @@ Here are other projects
 #### 1) Installation
 To install jetson inference on your machine 
 
-    pip3 install jetson-inference
+    sudo apt-get update
+    sudo apt-get install git cmake libpython3-dev python3-numpy
+    cd ~/Downloads
+    git clone --recursive https://github.com/dusty-nv/jetson-inference
+    cd jetson inference
+    mkdir build
+    cd build 
+    cmake ../
+After the last step is done, there will be a pop-to of choices to choose from. From image segmentation, detection and classification all optional.
+Here we will use the default choices chosen for us. (Imagenet, detectnet, googlenet etc...)
+
+When the download is finished, it will prompt the you to install packages. Choose python3 and not python2.
+    
+    make -j$(nproc)
+This process will take some time and once it is done
+    
+    sudo make install
+    sudo ldconfig
+    sudo apt-get install v4l-utils
+To check if torch and torchvision is properly installed
+
+    python3
+    import torch
+    import torchvision
+If there are not errors then you are safe to proceed.
+
 #### 2) Obtaining datasets
+To get custom datasets online, [Open Images](https://storage.googleapis.com/openimages/web/visualizer/index.html?set=train&type=detection&c=%2Fm%2F0fp6w) has over [600](https://github.com/changherng/customobjectdetectionsamples/blob/main/openImages_classesLists.txt) 
+different classes of objects for you to choose from.
 #### 3) Training custom models
 #### 4) Creating the onnx file
 #### 5) Launching your own object detection program
@@ -35,8 +61,7 @@ To install jetson inference on your machine
 
 Link here `INSERT LINK`
 
-To get custom datasets online, [Open Images](https://storage.googleapis.com/openimages/web/visualizer/index.html?set=train&type=detection&c=%2Fm%2F0fp6w) has over [600](https://github.com/changherng/customobjectdetectionsamples/blob/main/openImages_classesLists.txt) 
-different classes of objects for you to choose from.
+
 
 
 
