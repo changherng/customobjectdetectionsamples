@@ -49,8 +49,25 @@ To get custom datasets online, [Open Images](https://storage.googleapis.com/open
 different classes of objects for you to choose from.
 `If you already have the images either from other websites or taken personally, you can create datasets using other methods. Refer to Annotations at the bottom)`
 #### 3) Training custom models
+To train your dataset do to the detection directory
+
+    cd jetson-inference/python/training/detection/ssd
+    python3 train_ssd.py --data=data/<YOUR-DATASET> --model-dir=models/<YOUR-MODEL>
+If you are using labelImg or cvat to train your dataset use
+
+    python3 train_ssd.py --dataset-type=voc --data=data/<YOUR-DATASET> --model-dir=models/<YOUR-MODEL>
+    
 #### 4) Creating the onnx file
+After training your models, you will have to convert it to ONNX
+
+    python3 onnx_export.py --model-dir=models/<YOUR-MODEL>
 #### 5) Launching your own object detection program
+To launch the object detection with your custom trained model:
+    
+    NET=models/<YOUR-MODEL>
+    detectnet --model=$NET/ssd-mobilenet.onnx --labels=$NET/labels.txt \
+          --input-blob=input_0 --output-cvg=scores --output-bbox=boxes \
+            /dev/video0
 #### 6) Writing your own custom object detection program in python
 #### 7) References
 
@@ -60,7 +77,7 @@ different classes of objects for you to choose from.
 ## Annotations
 #### LabelImg (For annotations of custom datasets)
 
-Link here `INSERT LINK`
+Link here - [tzutalin/labelImg](https://github.com/tzutalin/labelImg)
 
 
 
@@ -73,6 +90,7 @@ Link here `INSERT LINK`
 
 
 Code for flask server object detection [here](https://github.com/changherng/customobjectdetectionsamples/blob/main/objectDetectorFlaskServer.py)
+Use `pip3 install flask` to install the flask module on your machine.
 
 
 
