@@ -47,6 +47,7 @@ If there are not errors then you are safe to proceed.
 #### 2) Obtaining datasets
 To get custom datasets online, [Open Images](https://storage.googleapis.com/openimages/web/visualizer/index.html?set=train&type=detection&c=%2Fm%2F0fp6w) has over [600](https://github.com/changherng/customobjectdetectionsamples/blob/main/openImages_classesLists.txt) 
 different classes of objects for you to choose from.
+`If you already have the images either from other websites or taken personally, you can create datasets using other methods. Refer to Annotations at the bottom)`
 #### 3) Training custom models
 #### 4) Creating the onnx file
 #### 5) Launching your own object detection program
