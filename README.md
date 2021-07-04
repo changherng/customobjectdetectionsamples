@@ -69,6 +69,8 @@ To launch the object detection with your custom trained model:
           --input-blob=input_0 --output-cvg=scores --output-bbox=boxes \
             /dev/video0
 #### 6) Writing your own custom object detection program in python
+Now that we are done launching it from terminal, you might want to try and write a python script to add in more functionality.
+Here is a script that uses a custom dataset and prints the object detected. This can be further pushed to work with apps or arduino: [customObjectDetector.py](https://github.com/changherng/customobjectdetectionsamples/blob/main/custom_model_detector.py)
 #### 7) References
 
 
