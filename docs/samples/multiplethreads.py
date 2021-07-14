@@ -1,32 +1,46 @@
 '''The following code allows the user to access multiple threads at once. So it is now possible to go to app.route("/")
-and app.route("/cam") at the same time on the development server'''
-import cv2
-import time
+and app.route("/cam") at the same time on the development server  Latest change 14th July 2021'''
 import threading
 import os
+import jetson.inference
+import jetson.utils
+import time
+import cv2
+import numpy as np 
 from flask import Response, Flask
 from flask import request
 # Image frame sent to the Flask object
+net=jetson.inference.detectNet('ssd-mobilenet-v2',['--model=models/myThurs/ssd-mobilenet.onnx','--input-blob=input_0','--output-cvg=scores','--output-bbox=boxes','--labels=models/myThurs/labels.txt'], threshold=.5)
+dispW=640
+dispH=480
+font=cv2.FONT_HERSHEY_SIMPLEX
 global video_frame
 video_frame = None
-face_detector = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-# Use locks for thread-safe viewing of frames in multiple browsers
 global thread_lock
 thread_lock = threading.Lock()
-# GStreamer Pipeline to access the Raspberry Pi camera
 video_capture = cv2.VideoCapture(0)
-# Create the Flask object for the application
 app = Flask(__name__)
 def captureFrames():
-    global video_frame, thread_lock
+    global video_frame, thread_lock, item
     while True and video_capture.isOpened():
         return_key, frame = video_capture.read()
         if not return_key:
             break
-        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-        faces = face_detector.detectMultiScale(gray, 1.3, 5)
-        for (x,y,w,h) in faces:
-            cv2.rectangle(frame, (x,y), (x+w,y+h), (255,0,0), 2)
+        height=dispH
+        width=dispW
+        test=cv2.cvtColor(frame,cv2.COLOR_BGR2RGBA).astype(np.float32)
+        test=jetson.utils.cudaFromNumpy(test)
+        detections=net.Detect(test, width, height)
+        for detect in detections:
+            ID=detect.ClassID
+            top=int(detect.Top)
+            left=int(detect.Left)
+            bottom=int(detect.Bottom)
+            right=int(detect.Right)
+            item=net.GetClassDesc(ID)
+            cv2.rectangle(frame,(left,top),(right,bottom),(0,255,0),1)
+            print(item + ' detected')
+
         # Create a copy of the frame and store it in the global variable,
         # with thread safe access
         with thread_lock:
@@ -47,9 +61,11 @@ def encodeFrame():
             return_key, encoded_image = cv2.imencode(".jpg", video_frame)
             if not return_key:
                 continue
-        # Output image as a byte array
         yield(b'--frame\r\n' b'Content-Type: image/jpeg\r\n\r\n' +
             bytearray(encoded_image) + b'\r\n')
+@app.route("/cam")
+def streamFrames():
+    return Response(encodeFrame(), mimetype = "multipart/x-mixed-replace; boundary=frame")
 @app.route('/',methods=["POST"])
 def hello_sun():
     value1=(request.form['number1'])
@@ -64,20 +80,25 @@ def hello_sun():
     elif(value1 == '5'):
         print("STOP")
     return(str(value1))
-@app.route("/cam")
-def streamFrames():
-    return Response(encodeFrame(), mimetype = "multipart/x-mixed-replace; boundary=frame")
-# check to see if this is the main thread of execution
+@app.route('/msg')
+def hello_activity():
+    global item
+    return item
 if __name__ == '__main__':
-    # Create a thread and attach the method that captures the image frames, to it
     process_thread = threading.Thread(target=captureFrames)
     process_thread.daemon = True
-    # Start the thread
     process_thread.start()
-    # While it can be run on any feasible IP, IP = 0.0.0.0 renders the web app on
-    # the host machine's localhost and is discoverable by other machines on the same network
-    #By setting threaded to True, we can now access multiple routes at the same time
-    app.run("0.0.0.0", port=8000,threaded=True)
+    # the host machine's localhost and is discoverable by other machines on the same network 
+    app.run(host='0.0.0.0', port=8000, threaded=True)
+
+
+
+
+
+
+
+
+
 
 
 
