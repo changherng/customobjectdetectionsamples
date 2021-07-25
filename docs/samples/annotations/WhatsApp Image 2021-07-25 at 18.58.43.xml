@@ -1,0 +1,39 @@
+<annotation>
+  <folder></folder>
+  <filename>WhatsApp Image 2021-07-25 at 18.58.43.jpeg</filename>
+  <source>
+    <database>Unknown</database>
+    <annotation>Unknown</annotation>
+    <image>Unknown</image>
+  </source>
+  <size>
+    <width>1200</width>
+    <height>1599</height>
+    <depth></depth>
+  </size>
+  <segmented>0</segmented>
+  <object>
+    <name>Face</name>
+    <truncated>0</truncated>
+    <occluded>0</occluded>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>302.39</xmin>
+      <ymin>302.64</ymin>
+      <xmax>718.53</xmax>
+      <ymax>854.97</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>Good</name>
+    <truncated>0</truncated>
+    <occluded>0</occluded>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>71.62</xmin>
+      <ymin>687.42</ymin>
+      <xmax>508.78</xmax>
+      <ymax>1433.54</ymax>
+    </bndbox>
+  </object>
+</annotation>
