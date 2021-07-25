@@ -1,0 +1,27 @@
+<annotation>
+  <folder></folder>
+  <filename>sukhasana.jpg</filename>
+  <source>
+    <database>Unknown</database>
+    <annotation>Unknown</annotation>
+    <image>Unknown</image>
+  </source>
+  <size>
+    <width>730</width>
+    <height>411</height>
+    <depth></depth>
+  </size>
+  <segmented>0</segmented>
+  <object>
+    <name>Face</name>
+    <truncated>0</truncated>
+    <occluded>0</occluded>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>430.14</xmin>
+      <ymin>75.12</ymin>
+      <xmax>472.91</xmax>
+      <ymax>121.04</ymax>
+    </bndbox>
+  </object>
+</annotation>

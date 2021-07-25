@@ -1,0 +1,27 @@
+<annotation>
+  <folder></folder>
+  <filename>image-resizer.jpg</filename>
+  <source>
+    <database>Unknown</database>
+    <annotation>Unknown</annotation>
+    <image>Unknown</image>
+  </source>
+  <size>
+    <width>545</width>
+    <height>817</height>
+    <depth></depth>
+  </size>
+  <segmented>0</segmented>
+  <object>
+    <name>Face</name>
+    <truncated>0</truncated>
+    <occluded>0</occluded>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>159.9</xmin>
+      <ymin>187.65</ymin>
+      <xmax>216.29</xmax>
+      <ymax>261.93</ymax>
+    </bndbox>
+  </object>
+</annotation>

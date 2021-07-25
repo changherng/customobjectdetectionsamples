@@ -1,0 +1,27 @@
+<annotation>
+  <folder></folder>
+  <filename>03-Homeless-Austin-MKC-TT.jpg</filename>
+  <source>
+    <database>Unknown</database>
+    <annotation>Unknown</annotation>
+    <image>Unknown</image>
+  </source>
+  <size>
+    <width>850</width>
+    <height>570</height>
+    <depth></depth>
+  </size>
+  <segmented>0</segmented>
+  <object>
+    <name>Face</name>
+    <truncated>0</truncated>
+    <occluded>0</occluded>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>418.28</xmin>
+      <ymin>168.24</ymin>
+      <xmax>455.0</xmax>
+      <ymax>211.3</ymax>
+    </bndbox>
+  </object>
+</annotation>

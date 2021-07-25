@@ -1,0 +1,27 @@
+<annotation>
+  <folder></folder>
+  <filename>sit.jpg</filename>
+  <source>
+    <database>Unknown</database>
+    <annotation>Unknown</annotation>
+    <image>Unknown</image>
+  </source>
+  <size>
+    <width>682</width>
+    <height>1024</height>
+    <depth></depth>
+  </size>
+  <segmented>0</segmented>
+  <object>
+    <name>Face</name>
+    <truncated>0</truncated>
+    <occluded>0</occluded>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>370.75</xmin>
+      <ymin>125.94</ymin>
+      <xmax>452.62</xmax>
+      <ymax>213.96</ymax>
+    </bndbox>
+  </object>
+</annotation>
