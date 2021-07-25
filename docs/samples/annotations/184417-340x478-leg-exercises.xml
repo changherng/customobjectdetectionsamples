@@ -1,0 +1,27 @@
+<annotation>
+  <folder></folder>
+  <filename>184417-340x478-leg-exercises.jpg</filename>
+  <source>
+    <database>Unknown</database>
+    <annotation>Unknown</annotation>
+    <image>Unknown</image>
+  </source>
+  <size>
+    <width>340</width>
+    <height>478</height>
+    <depth></depth>
+  </size>
+  <segmented>0</segmented>
+  <object>
+    <name>Face</name>
+    <truncated>0</truncated>
+    <occluded>0</occluded>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>103.84</xmin>
+      <ymin>60.53</ymin>
+      <xmax>148.19</xmax>
+      <ymax>111.44</ymax>
+    </bndbox>
+  </object>
+</annotation>

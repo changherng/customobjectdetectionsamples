@@ -1,0 +1,27 @@
+<annotation>
+  <folder></folder>
+  <filename>j18.jpg</filename>
+  <source>
+    <database>Unknown</database>
+    <annotation>Unknown</annotation>
+    <image>Unknown</image>
+  </source>
+  <size>
+    <width>640</width>
+    <height>360</height>
+    <depth></depth>
+  </size>
+  <segmented>0</segmented>
+  <object>
+    <name>Good</name>
+    <truncated>0</truncated>
+    <occluded>0</occluded>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>219.5</xmin>
+      <ymin>53.36</ymin>
+      <xmax>352.94</xmax>
+      <ymax>223.14</ymax>
+    </bndbox>
+  </object>
+</annotation>

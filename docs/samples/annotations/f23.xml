@@ -1,0 +1,27 @@
+<annotation>
+  <folder></folder>
+  <filename>f23.jpg</filename>
+  <source>
+    <database>Unknown</database>
+    <annotation>Unknown</annotation>
+    <image>Unknown</image>
+  </source>
+  <size>
+    <width>750</width>
+    <height>500</height>
+    <depth></depth>
+  </size>
+  <segmented>0</segmented>
+  <object>
+    <name>Face</name>
+    <truncated>0</truncated>
+    <occluded>0</occluded>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>327.71</xmin>
+      <ymin>159.34</ymin>
+      <xmax>560.36</xmax>
+      <ymax>407.76</ymax>
+    </bndbox>
+  </object>
+</annotation>

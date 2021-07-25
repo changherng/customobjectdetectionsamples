@@ -1,0 +1,27 @@
+<annotation>
+  <folder></folder>
+  <filename>f16.jpg</filename>
+  <source>
+    <database>Unknown</database>
+    <annotation>Unknown</annotation>
+    <image>Unknown</image>
+  </source>
+  <size>
+    <width>800</width>
+    <height>533</height>
+    <depth></depth>
+  </size>
+  <segmented>0</segmented>
+  <object>
+    <name>Face</name>
+    <truncated>0</truncated>
+    <occluded>0</occluded>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>128.85</xmin>
+      <ymin>135.65</ymin>
+      <xmax>312.41</xmax>
+      <ymax>347.92</ymax>
+    </bndbox>
+  </object>
+</annotation>

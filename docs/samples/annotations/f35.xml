@@ -1,0 +1,27 @@
+<annotation>
+  <folder></folder>
+  <filename>f35.jpg</filename>
+  <source>
+    <database>Unknown</database>
+    <annotation>Unknown</annotation>
+    <image>Unknown</image>
+  </source>
+  <size>
+    <width>625</width>
+    <height>417</height>
+    <depth></depth>
+  </size>
+  <segmented>0</segmented>
+  <object>
+    <name>Face</name>
+    <truncated>0</truncated>
+    <occluded>0</occluded>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>284.04</xmin>
+      <ymin>69.85</ymin>
+      <xmax>345.7</xmax>
+      <ymax>143.32</ymax>
+    </bndbox>
+  </object>
+</annotation>
